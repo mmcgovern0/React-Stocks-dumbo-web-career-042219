@@ -5,20 +5,22 @@ import SearchBar from '../components/SearchBar'
 
 class MainContainer extends Component {
 
+
+
   render() {
     return (
       <div>
-        <SearchBar/>
+        <SearchBar sortStocks={this.props.sortStocks} filter={this.props.filter}/>
 
           <div className="row">
             <div className="col-8">
 
-              <StockContainer/>
+              <StockContainer allStocks={this.props.allStocks} buyStocks={this.props.buyStocks}/>
 
             </div>
             <div className="col-4">
 
-              <PortfolioContainer/>
+              <PortfolioContainer myPortfolio={this.props.myPortfolio} sellStocks={this.props.sellStocks}/>
 
             </div>
           </div>
@@ -29,3 +31,4 @@ class MainContainer extends Component {
 }
 
 export default MainContainer;
+
